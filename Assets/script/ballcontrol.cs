@@ -19,6 +19,11 @@ public class ballcontrol : MonoBehaviour
         transform.position = new Vector3(resetPosition.x, resetPosition.y, 2);
     }
 
+    public void SpeedUp(float magnitude)
+    {
+        rigid.velocity *= magnitude;
+    }
+
     // Update is called once per frame
     void Update()
     {
