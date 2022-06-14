@@ -19,6 +19,7 @@ public class powerupmanager : MonoBehaviour
     {
         poweruplist = new List<GameObject>();
         timer = 0;
+        
     }
 
     private void Update()
@@ -29,6 +30,7 @@ public class powerupmanager : MonoBehaviour
         {
             GenerateRandom();
             timer -= spawnInterval;
+            
         }
     }
 
@@ -61,6 +63,7 @@ public class powerupmanager : MonoBehaviour
     {
         poweruplist.Remove(powerUp);
         Destroy(powerUp);
+        StartCoroutine(SelfDestruct());
     }
 
     public void Removeallpower()
@@ -69,6 +72,13 @@ public class powerupmanager : MonoBehaviour
         {
             Removepowerup(poweruplist[0]);
         }
+    }
+
+    
+    IEnumerator SelfDestruct()
+    {
+         yield return new WaitForSeconds(10f);
+        Destroy(gameObject);
     }
 
    
