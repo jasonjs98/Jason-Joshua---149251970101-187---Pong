@@ -15,4 +15,14 @@ public class MainMenu : MonoBehaviour
     {
         Debug.Log("Created by Jason Joshua - 149251970101-187");
     }
+
+    public void BackMain()
+    {
+        SceneManager.LoadScene("main menu");
+    }
+
+    public void PlayCredit()
+    {
+        SceneManager.LoadScene("credit");
+    }
 }
